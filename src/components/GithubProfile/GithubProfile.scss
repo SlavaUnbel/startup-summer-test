@@ -4,6 +4,27 @@
     --layout-user-icon-margin-bottom: 42px;
     --no-user-text-font-size: 22px;
     --no-user-text-line-height: 30.8px;
+    --github-profile-width: calc(100% - 116px);
+    --github-profile-padding: 102px 58px 30px;
+    --user-info-margin-right: 80px;
+    --avatar-img-size: 280px;
+    --avatar-img-margin-bottom: 29px;
+    --user-name-font-size: 26px;
+    --user-name-line-height: 33.8px;
+    --user-name-margin-bottom: 12px;
+    --user-link-font-size: 18px;
+    --user-link-margin-bottom: 25px;
+    --people-icon-size: 24px;
+    --people-icon-margin-right: 8px;
+    --people-text-font-size: 16px;
+    --people-text-line-height: 24px;
+    --people-text-margin-right: 16px;
+    --repos-heading-font-size: 32px;
+    --repos-heading-line-height: 41.6px;
+    --repos-heading-margin-bottom: 29px;
+    --no-repos-icon-margin-bottom: 48px;
+    --no-repos-text-font-size: 22px;
+    --no-repos-text-line-height: 30.8px;
 }
 
 .user-icon {
@@ -17,4 +38,111 @@
     font-size: var(--no-user-text-font-size);
     line-height: var(--no-user-text-line-height);
     color: #808080;
+}
+
+.github-profile {
+    width: var(--github-profile-width);
+    height: 100%;
+    padding: var(--github-profile-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .user-info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-right: var(--user-info-margin-right);
+
+        .avatar-img {
+            width: var(--avatar-img-size);
+            height: var(--avatar-img-size);
+            border-radius: 50%;
+            margin-bottom: var(--avatar-img-margin-bottom);
+        }
+
+        .user-name {
+            margin: 0;
+            font-weight: 600;
+            font-size: var(--user-name-font-size);
+            line-height: var(--user-name-line-height);
+            margin-bottom: var(--user-name-margin-bottom);
+        }
+
+        .user-link {
+            text-decoration: none;
+            font-size: var(--user-link-font-size);
+            color: #0064EB;
+            margin-bottom: var(--user-link-margin-bottom);
+        }
+
+        .people {
+            display: flex;
+            align-items: center;
+
+            .people-section {
+                display: flex;
+                align-items: center;
+
+                &:first-child {
+                    margin-right: var(--people-text-margin-right);
+                }
+
+                .people-icon {
+                    width: var(--people-icon-size);
+                    height: var(--people-icon-size);
+                    margin-right: var(--people-icon-margin-right);
+                }
+    
+                .people-text {
+                    font-size: var(--people-text-font-size);
+                    line-height: var(--people-text-line-height);
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .user-repos {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        min-height: 100%;
+        position: relative;
+
+        .repos-heading {
+            margin: 0;
+            font-weight: 600;
+            font-size: var(--repos-heading-font-size);
+            line-height: var(--repos-heading-line-height);
+            margin-bottom: var(--repos-heading-margin-bottom);
+        }
+    }
+
+    .empty-repos {
+        flex: 1;
+        
+        .no-repos {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            .no-repos-icon {
+                margin-bottom: var(--no-repos-icon-margin-bottom);
+            }
+    
+            .no-repos-text {
+                margin: 0;
+                font-size: var(--no-repos-text-font-size);
+                line-height: var(--no-repos-text-line-height);
+                color: #808080;
+            }
+        }
+    }
+    
 }

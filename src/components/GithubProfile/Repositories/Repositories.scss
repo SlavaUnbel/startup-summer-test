@@ -1,0 +1,129 @@
+:root {
+    --repo-wrapper-width: calc(100% - 56px);
+    --repo-wrapper-padding: 24px 32px;
+    --repo-wrapper-margin-bottom: 24px;
+    --repo-name-font-size: 24px;
+    --repo-name-line-height: 29.05px;
+    --repo-name-margin-bottom: 16px;
+    --repo-description-font-size: 16px;
+    --repo-description-line-height: 19.36px;
+    --pages-count-font-size: 14px;
+    --pages-count-line-height: 21px;
+    --pages-count-margin-right: 24px;
+    --previous-margin-right: 9.29px;
+    --next-margin-left: 5px;
+    --page-font-size: 14px;
+    --page-padding: 2px 6px;
+}
+
+.repos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .repo-wrapper {
+        padding: var(--repo-wrapper-padding);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        width: var(--repo-wrapper-width);
+        margin-bottom: var(--repo-wrapper-margin-bottom);
+        max-height: 100px;
+
+        &:last-child {
+            margin-bottom: auto;
+        }
+    
+        .repo-name {
+            text-decoration: none;
+            color: #0064EB;
+            font-size: var(--repo-name-font-size);
+            line-height: var(--repo-name-line-height);
+            margin-bottom: var(--repo-name-margin-bottom);
+        }
+    
+        .repo-description {
+            font-size: var(--repo-description-font-size);
+            line-height: var(--repo-description-line-height);
+        }
+    }
+
+    .pagination-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        user-select: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        .pages-count {
+            margin: 0;
+            font-size: var(--pages-count-font-size);
+            line-height: var(--pages-count-line-height);
+            color: #808080;
+        }
+    
+        .pagination {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            
+            .previous {
+                display: flex;
+                align-items: center;
+                margin-right: var(--previous-margin-right);
+                cursor: pointer;
+    
+                &:hover {
+                    transition: all 0.3s ease;
+                    color: #0064EB;
+                }
+
+                &.disabled {
+                    a:hover {
+                        cursor: not-allowed;
+                        color: none;
+                    }
+                }
+            }
+    
+            .next {
+                display: flex;
+                align-items: center;
+                margin-left: var(--next-margin-left);
+                cursor: pointer;
+                
+                &:hover {
+                    transition: all 0.3s ease;
+                    color: #0064EB;
+                }
+
+                &.disabled {
+                    a:hover {
+                        color: none;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+
+            .page {
+                color: #808080;
+                font-size: var(--page-font-size);
+                padding: var(--page-padding);
+                cursor: pointer;
+            }
+
+            .active {
+                transition: all 0.3s ease;
+                background: #0064EB;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

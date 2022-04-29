@@ -5,5 +5,4 @@ export interface User {
   followers: number;
   following: number;
   avatar_url: string;
-  public_repos: number;
 }
