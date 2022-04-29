@@ -1,0 +1,19 @@
+:root {
+    --loader-border-bg: 16px solid #f3f3f3;
+    --loader-border-spinner: 16px solid #808080;
+    --loader-size: 120px;
+}
+
+.loader {
+    border: var(--loader-border-bg);
+  border-radius: 50%;
+    border-top: var(--loader-border-spinner);
+  width: var(--loader-size);
+  height: var(--loader-size);
+  animation: spin 2s linear infinite;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}

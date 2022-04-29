@@ -1,12 +1,20 @@
 import React, { useRef, useState } from 'react';
+import { useGithubEndpoints } from '../../hooks/useGithubApi';
+import { Repos } from '../../types/repos';
+import { User } from '../../types/user';
 
 interface Props {
   executeSearch: (executed: boolean) => void;
+  setLoading: (loading: boolean) => void;
+  setNotFound: (notFound: boolean) => void;
+  setUser: (user: User) => void;
+  setRepos: (repos: Repos[]) => void;
 }
 
-const Header: React.FC<Props> = ({ executeSearch }) => {
+const Header: React.FC<Props> = ({ executeSearch, setLoading, setNotFound, setUser, setRepos }) => {
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const callApi = useGithubEndpoints(searchValue, setLoading, setUser, setRepos, setNotFound);
 
   const githubIcon = `${process.env.PUBLIC_URL}/assets/github.svg`;
   const searchInputIcon = `${process.env.PUBLIC_URL}/assets/search-icon.svg`;
@@ -24,6 +32,7 @@ const Header: React.FC<Props> = ({ executeSearch }) => {
   const handleSubmitSearch = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     executeSearch(true);
+    callApi();
   };
 
   return (

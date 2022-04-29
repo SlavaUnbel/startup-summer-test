@@ -1,0 +1,19 @@
+:root {
+    --layout-search-icon-size: 64px;
+    --layout-search-icon-margin-bottom: 47px;
+    --start-text-font-size: 22px;
+    --start-text-line-height: 30.8px;
+}
+
+.layout-search-icon {
+    width: var(--layout-search-icon-size);
+    height: var(--layout-search-icon-size);
+    margin-bottom: var(--layout-search-icon-margin-bottom);
+}
+
+.start-text {
+    margin: 0;
+    font-size: var(--start-text-font-size);
+    line-height: var(--start-text-line-height);
+    color: #808080;
+}

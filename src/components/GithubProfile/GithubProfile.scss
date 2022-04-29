@@ -1,0 +1,20 @@
+:root {
+    --layout-user-icon-width: 65px;
+    --layout-user-icon-height: 75px;
+    --layout-user-icon-margin-bottom: 42px;
+    --no-user-text-font-size: 22px;
+    --no-user-text-line-height: 30.8px;
+}
+
+.user-icon {
+    width: var(--layout-user-icon-width);
+    height: var(--layout-user-icon-height);
+    margin-bottom: var(--layout-user-icon-margin-bottom);
+}
+
+.no-user-text {
+    margin: 0;
+    font-size: var(--no-user-text-font-size);
+    line-height: var(--no-user-text-line-height);
+    color: #808080;
+}
