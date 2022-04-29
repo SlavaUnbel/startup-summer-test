@@ -53,6 +53,7 @@
   },
   "prettier": {
     "singleQuote": true,
+    "jsxSingleQuote": true,
     "printWidth": 100,
     "useTabs": false,
     "semi": true,

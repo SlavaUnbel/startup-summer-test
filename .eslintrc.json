@@ -28,6 +28,15 @@
         "prettier"
     ],
     "rules": {
+        "prettier/prettier": [
+            "warn",
+            {
+              "singleQuote": true,
+              "jsxSingleQuote": false,
+              "semi": true,
+              "trailingComma": "none"
+            }
+          ],
         "require-jsdoc": "off",
         "typescript-eslint/ban-ts-comment": "off",
         "typescript-eslint/ban-types": "off"

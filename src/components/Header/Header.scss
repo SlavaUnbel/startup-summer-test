@@ -1,0 +1,47 @@
+:root {
+    --header-padding: 16px 41px;
+    --logo-size: 40px;
+    --logo-margin-right: 22px;
+    --search-input-padding: 8px 19px;
+    --search-icon-size: 14px;
+    --search-input-icon-margin-right: 11px;
+    --search-input-font-size: 14px;
+    --search-input-width: 500px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    background: #0064EB;
+    padding: var(--header-padding);
+
+    .logo {
+        width: var(--logo-size);
+        height: var(--logo-size);
+        margin-right: var(--logo-margin-right);
+    }
+
+    .search-input-wrapper {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: var(--search-input-padding);
+        border-radius: 6px;
+
+        .search-icon {
+            width: var(--search-icon-size);
+            height: var(--search-icon-size);
+            margin-right: var(--search-input-icon-margin-right);
+        }
+
+        .search-input {
+            outline: none;
+            border: none;
+            font-family: inherit;
+            font-size: var(--search-input-font-size);
+            width: var(--search-input-width);
+        }
+    }
+}

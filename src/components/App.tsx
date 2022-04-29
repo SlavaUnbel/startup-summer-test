@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import Header from './Header';
 import Layout from './Layout';
 
 const App: React.FC = () => {
+  const [searchExecuted, setSearchExecuted] = useState(false);
+
+  useEffect(() => () => setSearchExecuted(false), []);
+
   return (
     <div className="app">
-      <Header />
+      <Header executeSearch={setSearchExecuted} />
 
-      <Layout />
+      <Layout searchExecuted={searchExecuted} />
     </div>
   );
 };
