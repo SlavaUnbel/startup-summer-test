@@ -1,9 +1,14 @@
 :root {
     --layout-user-icon-width: 65px;
+    --mobile-layout-user-icon-width: 33px;
     --layout-user-icon-height: 75px;
+    --mobile-layout-user-icon-height: 38px;
     --layout-user-icon-margin-bottom: 42px;
+    --mobile-layout-user-icon-margin-bottom: 21px;
     --no-user-text-font-size: 22px;
+    --mobile-no-user-text-font-size: 18px;
     --no-user-text-line-height: 30.8px;
+    --mobile-no-user-text-line-height: 25.8px;
     --github-profile-width: calc(100% - 116px);
     --mobile-medium-github-profile-width: calc(100% - 64px);
     --mobile-small-github-profile-width: calc(100% - 32px);
@@ -53,6 +58,12 @@
     width: var(--layout-user-icon-width);
     height: var(--layout-user-icon-height);
     margin-bottom: var(--layout-user-icon-margin-bottom);
+
+    @media (max-width: 800px) {
+        width: var(--mobile-layout-user-icon-width);
+        height: var(--mobile-layout-user-icon-height);
+        margin-bottom: var(--mobile-layout-user-icon-margin-bottom); 
+    }
 }
 
 .no-user-text {
@@ -60,6 +71,11 @@
     font-size: var(--no-user-text-font-size);
     line-height: var(--no-user-text-line-height);
     color: #808080;
+
+    @media (max-width: 800px) {
+        font-size: var(--mobile-no-user-text-font-size);
+        line-height: var(--mobile-no-user-text-line-height);
+    }
 }
 
 .github-profile {

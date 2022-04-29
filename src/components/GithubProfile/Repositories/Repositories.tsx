@@ -24,7 +24,7 @@ const Repositories: React.FC<Props> = ({ repos }) => {
   };
 
   const sliceDescription = (description: string) => {
-    if (description.length > 100) {
+    if (description && description.length > 100) {
       return description.substring(0, 97) + '...';
     }
 
