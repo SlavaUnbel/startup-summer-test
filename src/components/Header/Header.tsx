@@ -37,7 +37,9 @@ const Header: React.FC<Props> = ({ executeSearch, setLoading, setNotFound, setUs
 
   return (
     <div className="header">
-      <img className="logo" src={githubIcon} alt="" />
+      <a href="https://github.com/" target="_blank" rel="noreferrer">
+        <img className="logo" src={githubIcon} alt="" />
+      </a>
 
       <form onSubmit={handleSubmitSearch}>
         <div className="search-input-wrapper" onClick={handleFocusSearch}>
