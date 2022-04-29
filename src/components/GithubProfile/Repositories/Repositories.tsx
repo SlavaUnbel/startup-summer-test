@@ -23,8 +23,20 @@ const Repositories: React.FC<Props> = ({ repos }) => {
     setItemOffset(newOffset);
   };
 
-  const minItem = itemOffset + 1;
-  const maxItem = itemOffset + 4 > repos.length ? repos.length : itemOffset + 4;
+  const sliceDescription = (description: string) => {
+    if (description.length > 100) {
+      return description.substring(0, 97) + '...';
+    }
+
+    return description;
+  };
+
+  const repoItemsToDisplay = () => {
+    const minItem = itemOffset + 1;
+    const maxItem = itemOffset + 4 > repos.length ? repos.length : itemOffset + 4;
+
+    return `${minItem}-${maxItem} of ${repos.length} items`;
+  };
 
   return (
     <div className="repos">
@@ -34,14 +46,12 @@ const Repositories: React.FC<Props> = ({ repos }) => {
             {repo.name}
           </a>
 
-          <p className="repo-description">{repo.description}</p>
+          <p className="repo-description">{sliceDescription(repo.description)}</p>
         </div>
       ))}
 
       <div className="pagination-wrapper">
-        <p className="pages-count">
-          {minItem}-{maxItem} of {repos.length} items
-        </p>
+        <p className="pages-count">{repoItemsToDisplay()}</p>
 
         <ReactPaginate
           containerClassName="pagination"
