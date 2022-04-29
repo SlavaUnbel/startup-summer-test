@@ -5,26 +5,48 @@
     --no-user-text-font-size: 22px;
     --no-user-text-line-height: 30.8px;
     --github-profile-width: calc(100% - 116px);
+    --mobile-medium-github-profile-width: calc(100% - 64px);
+    --mobile-small-github-profile-width: calc(100% - 32px);
     --github-profile-padding: 102px 58px 30px;
+    --mobile-medium-github-profile-padding: 96px 32px 24px;
+    --mobile-small-github-profile-padding: 90px 16px 18px;
     --user-info-margin-right: 80px;
+    --mobile-user-info-margin-bottom: 16px;
     --avatar-img-size: 280px;
+    --mobile-medium-avatar-img-size: 220px;
+    --mobile-small-avatar-img-size: 160px;
     --avatar-img-margin-bottom: 29px;
+    --mobile-avatar-img-margin-right: 8px;
     --user-name-font-size: 26px;
+    --mobile-user-name-font-size: 22px;
     --user-name-line-height: 33.8px;
+    --mobile-user-name-line-height: 27.8px;
     --user-name-margin-bottom: 12px;
     --user-link-font-size: 18px;
+    --mobile-user-link-font-size: 14px;
     --user-link-margin-bottom: 25px;
     --people-icon-size: 24px;
-    --people-icon-margin-right: 8px;
+    --people-icon-margin-right: 12px;
     --people-text-font-size: 16px;
+    --mobile-people-text-font-size: 14px;
     --people-text-line-height: 24px;
+    --mobile-people-text-line-height: 20px;
     --people-text-margin-right: 16px;
+    --mobile-people-text-margin-bottom: 4px;
     --repos-heading-font-size: 32px;
+    --mobile-repos-heading-font-size: 24px;
     --repos-heading-line-height: 41.6px;
+    --mobile-repos-heading-line-height: 36.6px;
     --repos-heading-margin-bottom: 29px;
+    --mobile-repos-heading-margin-bottom: 14px;
+    --mobile-no-repos-icon-height: 31px;
+    --mobile-no-repos-icon-width: 38px;
     --no-repos-icon-margin-bottom: 48px;
+    --mobile-no-repos-icon-margin-bottom: 24px;
     --no-repos-text-font-size: 22px;
+    --mobile-no-repos-text-font-size: 18px;
     --no-repos-text-line-height: 30.8px;
+    --mobile-no-repos-text-line-height: 25.8px;
 }
 
 .user-icon {
@@ -48,6 +70,17 @@
     align-items: center;
     justify-content: space-between;
 
+    @media (max-width: 800px) {
+        flex-direction: column;
+        padding: var(--mobile-medium-github-profile-padding);
+        width: var(--mobile-medium-github-profile-width);
+    }
+
+    @media (max-width: 500px) {
+        padding: var(--mobile-small-github-profile-padding);
+        width: var(--mobile-small-github-profile-width);
+    }
+
     .user-info {
         height: 100%;
         display: flex;
@@ -55,12 +88,34 @@
         align-items: flex-start;
         justify-content: flex-start;
         margin-right: var(--user-info-margin-right);
+        
+        @media (max-width: 800px) {
+            width: 100%;
+            height: unset;
+            flex-direction: row;
+            margin-right: 0;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: var(--mobile-user-info-margin-bottom);
+        }
 
         .avatar-img {
             width: var(--avatar-img-size);
             height: var(--avatar-img-size);
             border-radius: 50%;
             margin-bottom: var(--avatar-img-margin-bottom);
+
+            @media (max-width: 800px) {
+                width: var(--mobile-medium-avatar-img-size);
+                height: var(--mobile-medium-avatar-img-size);
+                margin-bottom: 0;
+            }
+
+            @media (max-width: 500px) {
+                width: var(--mobile-small-avatar-img-size);
+                height: var(--mobile-small-avatar-img-size);
+                margin-right: var(--mobile-avatar-img-margin-right);
+            }
         }
 
         .user-name {
@@ -69,25 +124,48 @@
             font-size: var(--user-name-font-size);
             line-height: var(--user-name-line-height);
             margin-bottom: var(--user-name-margin-bottom);
+
+            @media (max-width: 800px) {
+                font-size: var(--mobile-user-name-font-size);
+                line-height: var(--mobile-user-name-line-height);
+            }
         }
 
         .user-link {
+            display: flex;
             text-decoration: none;
             font-size: var(--user-link-font-size);
             color: #0064EB;
             margin-bottom: var(--user-link-margin-bottom);
+
+            @media (max-width: 800px) {
+                font-size: var(--mobile-user-link-font-size);
+            }
         }
 
         .people {
             display: flex;
             align-items: center;
 
+            @media (max-width: 800px) {
+                flex-direction: column;
+            }
+
             .people-section {
                 display: flex;
                 align-items: center;
 
+                @media (max-width: 800px) {
+                    width: 100%;
+                }
+
                 &:first-child {
                     margin-right: var(--people-text-margin-right);
+
+                    @media (max-width: 800px) {
+                        margin-right: 0;
+                        margin-bottom: var(--mobile-people-text-margin-bottom);
+                    }
                 }
 
                 .people-icon {
@@ -100,6 +178,11 @@
                     font-size: var(--people-text-font-size);
                     line-height: var(--people-text-line-height);
                     margin: 0;
+
+                    @media (max-width: 800px) {
+                        font-size: var(--mobile-people-text-font-size);
+                        line-height: var(--mobile-people-text-line-height);
+                    }
                 }
             }
         }
@@ -111,6 +194,7 @@
         align-items: flex-start;
         flex: 1;
         min-height: 100%;
+        width: 100%;
         position: relative;
 
         .repos-heading {
@@ -119,6 +203,12 @@
             font-size: var(--repos-heading-font-size);
             line-height: var(--repos-heading-line-height);
             margin-bottom: var(--repos-heading-margin-bottom);
+
+            @media (max-width: 800px) {
+                font-size: var(--mobile-repos-heading-font-size);
+                line-height: var(--mobile-repos-heading-line-height);
+                margin-bottom: var(--mobile-repos-heading-margin-bottom);
+            }
         }
     }
 
@@ -134,6 +224,12 @@
     
             .no-repos-icon {
                 margin-bottom: var(--no-repos-icon-margin-bottom);
+
+                @media (max-width: 800px) {
+                    width: var(--mobile-no-repos-icon-width);
+                    height: var(--mobile-no-repos-icon-height);
+                    margin-bottom: var(--mobile-no-repos-icon-margin-bottom);
+                }
             }
     
             .no-repos-text {
@@ -141,6 +237,11 @@
                 font-size: var(--no-repos-text-font-size);
                 line-height: var(--no-repos-text-line-height);
                 color: #808080;
+
+                @media (max-width: 800px) {
+                    font-size: var(--mobile-no-repos-text-font-size);
+                    line-height: var(--mobile-no-repos-text-line-height);
+                }
             }
         }
     }

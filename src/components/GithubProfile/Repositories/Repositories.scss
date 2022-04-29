@@ -1,15 +1,23 @@
 :root {
     --repo-wrapper-width: calc(100% - 56px);
     --repo-wrapper-padding: 24px 32px;
+    --mobile-repo-wrapper-padding: 12px 16px;
     --repo-wrapper-margin-bottom: 24px;
+    --mobile-repo-wrapper-margin-bottom: 12px;
+    --repo-wrapper-max-height: 100px;
     --repo-name-font-size: 24px;
+    --mobile-repo-name-font-size: 18px;
     --repo-name-line-height: 29.05px;
+    --mobile-repo-name-line-height: 24.05px;
     --repo-name-margin-bottom: 16px;
+    --mobile-repo-name-margin-bottom: 12px;
     --repo-description-font-size: 16px;
+    --mobile-repo-description-font-size: 14px;
     --repo-description-line-height: 19.36px;
+    --mobile-repo-description-line-height: 16.36px;
     --pages-count-font-size: 14px;
     --pages-count-line-height: 21px;
-    --pages-count-margin-right: 24px;
+    --pages-count-margin-right: 16px;
     --previous-margin-right: 9.29px;
     --next-margin-left: 5px;
     --page-font-size: 14px;
@@ -29,23 +37,36 @@
         flex-direction: column;
         width: var(--repo-wrapper-width);
         margin-bottom: var(--repo-wrapper-margin-bottom);
-        max-height: 100px;
+        max-height: var(--repo-wrapper-max-height);
 
-        &:last-child {
-            margin-bottom: auto;
+        @media (max-width: 800px) {
+            padding: var(--mobile-repo-wrapper-padding);
+            margin-bottom: var(--mobile-repo-wrapper-margin-bottom);
         }
-    
+
         .repo-name {
             text-decoration: none;
             color: #0064EB;
             font-size: var(--repo-name-font-size);
             line-height: var(--repo-name-line-height);
             margin-bottom: var(--repo-name-margin-bottom);
+
+            @media (max-width: 800px) {
+                font-size: var(--mobile-repo-name-font-size);
+                line-height: var(--mobile-repo-name-line-height);
+                margin-bottom: var(--mobile-repo-name-margin-bottom);
+            }
         }
     
         .repo-description {
+            margin: 0;
             font-size: var(--repo-description-font-size);
             line-height: var(--repo-description-line-height);
+
+            @media (max-width: 800px) {
+                font-size: var(--mobile-repo-description-font-size);
+                line-height: var(--mobile-repo-description-line-height);
+            }
         }
     }
 
@@ -59,17 +80,28 @@
         bottom: 0;
         right: 0;
 
+        @media (max-width: 800px) {
+            right: 36px;
+            bottom: 250px;
+        }
+
+        @media (max-width: 500px) {
+            bottom: 200px;
+        }
+
         .pages-count {
             margin: 0;
             font-size: var(--pages-count-font-size);
             line-height: var(--pages-count-line-height);
             color: #808080;
+            margin-right: var(--pages-count-margin-right);
         }
     
         .pagination {
             display: flex;
             align-items: center;
             list-style: none;
+            padding: 0;
             
             .previous {
                 display: flex;

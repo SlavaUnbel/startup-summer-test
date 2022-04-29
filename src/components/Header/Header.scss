@@ -1,5 +1,7 @@
 :root {
     --header-padding: 16px 41px;
+    --header-medium-mobile-padding: 12px 28px;
+    --header-small-mobile-padding: 8px 18px;
     --logo-size: 40px;
     --logo-margin-right: 22px;
     --search-input-padding: 8px 19px;
@@ -7,6 +9,8 @@
     --search-input-icon-margin-right: 11px;
     --search-input-font-size: 14px;
     --search-input-width: 500px;
+    --mobile-medium-search-input-width: 240px;
+    --mobile-small-search-input-width: 160px;
 }
 
 .header {
@@ -16,6 +20,14 @@
     position: fixed;
     background: #0064EB;
     padding: var(--header-padding);
+
+    @media (max-width: 800px) {
+        padding: var(--header-medium-mobile-padding);
+    }
+
+    @media (max-width: 500px) {
+        padding: var(--header-small-mobile-padding);
+    }
 
     .logo {
         width: var(--logo-size);
@@ -42,6 +54,14 @@
             font-family: inherit;
             font-size: var(--search-input-font-size);
             width: var(--search-input-width);
+
+            @media (max-width: 800px) {
+                width: var(--mobile-medium-search-input-width);
+            }
+
+            @media (max-width: 500px) {
+                width: var(--mobile-small-search-input-width);
+            }
         }
     }
 }

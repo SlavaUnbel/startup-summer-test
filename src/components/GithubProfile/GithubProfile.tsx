@@ -31,24 +31,25 @@ const GithubProfile: React.FC<Props> = ({ notFound, user, repos }) => {
     <div className="github-profile">
       <div className="user-info">
         <img className="avatar-img" src={avatarImg} alt="" />
+        <div>
+          <h1 className="user-name">{name ?? 'No name provided'}</h1>
 
-        <h1 className="user-name">{name ?? 'No name provided'}</h1>
+          <a className="user-link" href={userLink} target="_blank" rel="noreferrer">
+            {login}
+          </a>
 
-        <a className="user-link" href={userLink} target="_blank" rel="noreferrer">
-          {login}
-        </a>
+          <div className="people">
+            <div className="people-section">
+              <img className="people-icon" src={manyPeopleIcon} alt="" />
 
-        <div className="people">
-          <div className="people-section">
-            <img className="people-icon" src={manyPeopleIcon} alt="" />
+              <p className="people-text">{millify(followers)} followers</p>
+            </div>
 
-            <p className="people-text">{millify(followers)} followers</p>
-          </div>
+            <div className="people-section">
+              <img className="people-icon" src={oneManIcon} alt="" />
 
-          <div className="people-section">
-            <img className="people-icon" src={oneManIcon} alt="" />
-
-            <p className="people-text">{millify(following)} following</p>
+              <p className="people-text">{millify(following)} following</p>
+            </div>
           </div>
         </div>
       </div>
