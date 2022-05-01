@@ -1,12 +1,11 @@
 :root {
     --layout-search-icon-size: 64px;
-    --mobile-layout-search-icon-size: 36px;
+    --mobile-layout-search-icon-size: 80px;
     --layout-search-icon-margin-bottom: 47px;
-    --mobile-layout-search-icon-margin-bottom: 24px;
     --start-text-font-size: 22px;
-    --mobile-start-text-font-size: 18px;
+    --mobile-start-text-font-size: 28px;
     --start-text-line-height: 30.8px;
-    --mobile-start-text-line-height: 25.4px;
+    --mobile-start-text-line-height: 36.8px;
 }
 
 .layout-search-icon {
@@ -14,10 +13,9 @@
     height: var(--layout-search-icon-size);
     margin-bottom: var(--layout-search-icon-margin-bottom);
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         width: var(--mobile-layout-search-icon-size);
         height: var(--mobile-layout-search-icon-size);
-        margin-bottom: var(--mobile-layout-search-icon-margin-bottom);
     }
 }
 
@@ -28,7 +26,7 @@
     color: #808080;
     text-align: center;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         font-size: var(--mobile-start-text-font-size);
         line-height: var(--mobile-start-text-line-height);
     }

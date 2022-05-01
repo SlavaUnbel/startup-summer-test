@@ -11,15 +11,17 @@ const Repositories: React.FC<Props> = ({ repos }) => {
   const [currentRepos, setCurrentRepos] = useState<Repos[]>([]);
   const [itemOffset, setItemOffset] = useState(0);
 
+  const itemsPerPage = window.innerWidth <= 1000 ? Math.ceil(window.innerHeight / 116) : 4;
+
   useEffect(() => {
-    const endOffset = itemOffset + 4;
+    const endOffset = itemOffset + itemsPerPage;
     setCurrentRepos(repos.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(repos.length / 4));
-  }, [itemOffset, repos]);
+    setPageCount(Math.ceil(repos.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, repos]);
 
   // eslint-disable-next-line
   const handlePageClick = (evt: any) => {
-    const newOffset = (evt.selected * 4) % repos.length;
+    const newOffset = (evt.selected * itemsPerPage) % repos.length;
     setItemOffset(newOffset);
   };
 
@@ -33,7 +35,8 @@ const Repositories: React.FC<Props> = ({ repos }) => {
 
   const repoItemsToDisplay = () => {
     const minItem = itemOffset + 1;
-    const maxItem = itemOffset + 4 > repos.length ? repos.length : itemOffset + 4;
+    const maxItem =
+      itemOffset + itemsPerPage > repos.length ? repos.length : itemOffset + itemsPerPage;
 
     return `${minItem}-${maxItem} of ${repos.length} items`;
   };

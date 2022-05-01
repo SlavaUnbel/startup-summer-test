@@ -1,16 +1,21 @@
 :root {
     --header-padding: 16px 41px;
-    --header-medium-mobile-padding: 12px 28px;
-    --header-small-mobile-padding: 8px 18px;
+    --header-large-mobile-padding: 20px 30px;
+    --header-medium-mobile-padding: 20px 24px;
+    --header-small-mobile-padding: 24px 18px;
     --logo-size: 40px;
     --logo-margin-right: 22px;
     --search-input-padding: 8px 19px;
+    --mobile-search-input-padding: 12px 19px;
     --search-icon-size: 14px;
+    --mobile-search-icon-size: 18px;
     --search-input-icon-margin-right: 11px;
     --search-input-font-size: 14px;
+    --mobile-search-input-font-size: 18px;
     --search-input-width: 500px;
-    --mobile-medium-search-input-width: 240px;
-    --mobile-small-search-input-width: 160px;
+    --mobile-large-search-input-width: calc(100vw - 188px);
+    --mobile-medium-search-input-width: calc(100vw - 182px);
+    --mobile-small-search-input-width: calc(100vw - 176px);
 }
 
 .header {
@@ -20,6 +25,10 @@
     position: fixed;
     background: #0064EB;
     padding: var(--header-padding);
+
+    @media (max-width: 1000px) {
+        padding: var(--header-large-mobile-padding);
+    }
 
     @media (max-width: 800px) {
         padding: var(--header-medium-mobile-padding);
@@ -42,10 +51,19 @@
         padding: var(--search-input-padding);
         border-radius: 6px;
 
+        @media (max-width: 1000px) {
+            padding: var(--mobile-search-input-padding);
+        }
+
         .search-icon {
             width: var(--search-icon-size);
             height: var(--search-icon-size);
             margin-right: var(--search-input-icon-margin-right);
+
+            @media (max-width: 1000px) {
+                width: var(--mobile-search-icon-size);
+                height: var(--mobile-search-icon-size);
+            }
         }
 
         .search-input {
@@ -55,10 +73,15 @@
             font-size: var(--search-input-font-size);
             width: var(--search-input-width);
 
+            @media (max-width: 1000px) {
+                font-size: var(--mobile-search-input-font-size);
+                width: var(--mobile-large-search-input-width);
+            }
+    
             @media (max-width: 800px) {
                 width: var(--mobile-medium-search-input-width);
             }
-
+    
             @media (max-width: 500px) {
                 width: var(--mobile-small-search-input-width);
             }

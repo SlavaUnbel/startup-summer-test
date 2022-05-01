@@ -22,13 +22,15 @@
     --next-margin-left: 5px;
     --page-font-size: 14px;
     --page-padding: 2px 6px;
+    --page-margin: 0 8px;
 }
 
 .repos {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex: 1;
 
     .repo-wrapper {
         padding: var(--repo-wrapper-padding);
@@ -39,7 +41,7 @@
         margin-bottom: var(--repo-wrapper-margin-bottom);
         max-height: var(--repo-wrapper-max-height);
 
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
             padding: var(--mobile-repo-wrapper-padding);
             margin-bottom: var(--mobile-repo-wrapper-margin-bottom);
         }
@@ -51,7 +53,7 @@
             line-height: var(--repo-name-line-height);
             margin-bottom: var(--repo-name-margin-bottom);
 
-            @media (max-width: 800px) {
+            @media (max-width: 1000px) {
                 font-size: var(--mobile-repo-name-font-size);
                 line-height: var(--mobile-repo-name-line-height);
                 margin-bottom: var(--mobile-repo-name-margin-bottom);
@@ -63,7 +65,7 @@
             font-size: var(--repo-description-font-size);
             line-height: var(--repo-description-line-height);
 
-            @media (max-width: 800px) {
+            @media (max-width: 1000px) {
                 font-size: var(--mobile-repo-description-font-size);
                 line-height: var(--mobile-repo-description-line-height);
             }
@@ -80,17 +82,15 @@
         bottom: 0;
         right: 0;
 
-        @media (max-width: 800px) {
-            right: 36px;
-            bottom: 250px;
-        }
-
-        @media (max-width: 500px) {
-            bottom: 200px;
+        @media (max-width: 1000px) {
+            align-items: flex-start;
+            bottom: unset;
+            top: 0;
+            right: 32px;
         }
 
         .pages-count {
-            margin: 0;
+            margin: 8px 0 0;
             font-size: var(--pages-count-font-size);
             line-height: var(--pages-count-line-height);
             color: #808080;
@@ -102,6 +102,7 @@
             align-items: center;
             list-style: none;
             padding: 0;
+            margin: 8px 0 0;
             
             .previous {
                 display: flex;
@@ -128,7 +129,7 @@
                 margin-left: var(--next-margin-left);
                 cursor: pointer;
                 
-                &:hover {
+                a:hover {
                     transition: all 0.3s ease;
                     color: #0064EB;
                 }
@@ -145,14 +146,15 @@
                 color: #808080;
                 font-size: var(--page-font-size);
                 padding: var(--page-padding);
+                margin: var(--page-margin);
                 cursor: pointer;
             }
 
             .active {
                 transition: all 0.3s ease;
-                background: #0064EB;
-
+                
                 a {
+                    background: #0064EB;
                     color: #fff;
                 }
             }

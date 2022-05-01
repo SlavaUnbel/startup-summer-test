@@ -1,57 +1,55 @@
 :root {
     --layout-user-icon-width: 65px;
-    --mobile-layout-user-icon-width: 33px;
+    --mobile-layout-user-icon-width: 75px;
     --layout-user-icon-height: 75px;
-    --mobile-layout-user-icon-height: 38px;
+    --mobile-layout-user-icon-height: 85px;
     --layout-user-icon-margin-bottom: 42px;
-    --mobile-layout-user-icon-margin-bottom: 21px;
     --no-user-text-font-size: 22px;
-    --mobile-no-user-text-font-size: 18px;
+    --mobile-no-user-text-font-size: 28px;
     --no-user-text-line-height: 30.8px;
-    --mobile-no-user-text-line-height: 25.8px;
+    --mobile-no-user-text-line-height: 36.8px;
     --github-profile-width: calc(100% - 116px);
     --mobile-medium-github-profile-width: calc(100% - 64px);
     --mobile-small-github-profile-width: calc(100% - 32px);
     --github-profile-padding: 102px 58px 30px;
-    --mobile-medium-github-profile-padding: 96px 32px 24px;
-    --mobile-small-github-profile-padding: 90px 16px 18px;
+    --mobile-medium-github-profile-padding: 102px 32px 24px;
+    --mobile-small-github-profile-padding: 102px 16px 18px;
     --user-info-margin-right: 80px;
-    --mobile-user-info-margin-bottom: 16px;
+    --mobile-user-info-margin-bottom: 24px;
     --avatar-img-size: 280px;
-    --mobile-medium-avatar-img-size: 220px;
+    --mobile-medium-avatar-img-size: 320px;
     --mobile-small-avatar-img-size: 160px;
     --avatar-img-margin-bottom: 29px;
-    --mobile-avatar-img-margin-right: 8px;
     --user-name-font-size: 26px;
-    --mobile-user-name-font-size: 22px;
+    --mobile-user-name-font-size: 40px;
     --user-name-line-height: 33.8px;
-    --mobile-user-name-line-height: 27.8px;
+    --mobile-user-name-line-height: 44.8px;
     --user-name-margin-bottom: 12px;
     --user-link-font-size: 18px;
-    --mobile-user-link-font-size: 14px;
+    --mobile-user-link-font-size: 32px;
     --user-link-margin-bottom: 25px;
     --people-icon-size: 24px;
+    --mobile-people-icon-size: 40px;
     --people-icon-margin-right: 12px;
     --people-text-font-size: 16px;
-    --mobile-people-text-font-size: 14px;
+    --mobile-people-text-font-size: 32px;
     --people-text-line-height: 24px;
-    --mobile-people-text-line-height: 20px;
+    --mobile-people-text-line-height: 32px;
     --people-text-margin-right: 16px;
     --mobile-people-text-margin-bottom: 4px;
     --repos-heading-font-size: 32px;
-    --mobile-repos-heading-font-size: 24px;
+    --mobile-repos-heading-font-size: 36px;
     --repos-heading-line-height: 41.6px;
     --mobile-repos-heading-line-height: 36.6px;
     --repos-heading-margin-bottom: 29px;
-    --mobile-repos-heading-margin-bottom: 14px;
-    --mobile-no-repos-icon-height: 31px;
-    --mobile-no-repos-icon-width: 38px;
+    --mobile-repos-heading-margin-bottom: 18px;
+    --mobile-no-repos-icon-height: 70px;
+    --mobile-no-repos-icon-width: 80px;
     --no-repos-icon-margin-bottom: 48px;
-    --mobile-no-repos-icon-margin-bottom: 24px;
     --no-repos-text-font-size: 22px;
-    --mobile-no-repos-text-font-size: 18px;
+    --mobile-no-repos-text-font-size: 28px;
     --no-repos-text-line-height: 30.8px;
-    --mobile-no-repos-text-line-height: 25.8px;
+    --mobile-no-repos-text-line-height: 36.8px;
 }
 
 .user-icon {
@@ -59,10 +57,9 @@
     height: var(--layout-user-icon-height);
     margin-bottom: var(--layout-user-icon-margin-bottom);
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         width: var(--mobile-layout-user-icon-width);
         height: var(--mobile-layout-user-icon-height);
-        margin-bottom: var(--mobile-layout-user-icon-margin-bottom); 
     }
 }
 
@@ -72,7 +69,7 @@
     line-height: var(--no-user-text-line-height);
     color: #808080;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         font-size: var(--mobile-no-user-text-font-size);
         line-height: var(--mobile-no-user-text-line-height);
     }
@@ -86,7 +83,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         flex-direction: column;
         padding: var(--mobile-medium-github-profile-padding);
         width: var(--mobile-medium-github-profile-width);
@@ -105,7 +102,7 @@
         justify-content: flex-start;
         margin-right: var(--user-info-margin-right);
         
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
             width: 100%;
             height: unset;
             flex-direction: row;
@@ -121,7 +118,7 @@
             border-radius: 50%;
             margin-bottom: var(--avatar-img-margin-bottom);
 
-            @media (max-width: 800px) {
+            @media (max-width: 1000px) {
                 width: var(--mobile-medium-avatar-img-size);
                 height: var(--mobile-medium-avatar-img-size);
                 margin-bottom: 0;
@@ -141,7 +138,7 @@
             line-height: var(--user-name-line-height);
             margin-bottom: var(--user-name-margin-bottom);
 
-            @media (max-width: 800px) {
+            @media (max-width: 1000px) {
                 font-size: var(--mobile-user-name-font-size);
                 line-height: var(--mobile-user-name-line-height);
             }
@@ -154,7 +151,7 @@
             color: #0064EB;
             margin-bottom: var(--user-link-margin-bottom);
 
-            @media (max-width: 800px) {
+            @media (max-width: 1000px) {
                 font-size: var(--mobile-user-link-font-size);
             }
         }
@@ -163,7 +160,7 @@
             display: flex;
             align-items: center;
 
-            @media (max-width: 800px) {
+            @media (max-width: 1000px) {
                 flex-direction: column;
             }
 
@@ -171,14 +168,14 @@
                 display: flex;
                 align-items: center;
 
-                @media (max-width: 800px) {
+                @media (max-width: 1000px) {
                     width: 100%;
                 }
 
                 &:first-child {
                     margin-right: var(--people-text-margin-right);
 
-                    @media (max-width: 800px) {
+                    @media (max-width: 1000px) {
                         margin-right: 0;
                         margin-bottom: var(--mobile-people-text-margin-bottom);
                     }
@@ -188,6 +185,11 @@
                     width: var(--people-icon-size);
                     height: var(--people-icon-size);
                     margin-right: var(--people-icon-margin-right);
+
+                    @media (max-width: 1000px) {
+                        width: var(--mobile-people-icon-size);
+                        height: var(--mobile-people-icon-size);
+                    }
                 }
     
                 .people-text {
@@ -195,7 +197,7 @@
                     line-height: var(--people-text-line-height);
                     margin: 0;
 
-                    @media (max-width: 800px) {
+                    @media (max-width: 1000px) {
                         font-size: var(--mobile-people-text-font-size);
                         line-height: var(--mobile-people-text-line-height);
                     }
@@ -220,7 +222,7 @@
             line-height: var(--repos-heading-line-height);
             margin-bottom: var(--repos-heading-margin-bottom);
 
-            @media (max-width: 800px) {
+            @media (max-width: 1000px) {
                 font-size: var(--mobile-repos-heading-font-size);
                 line-height: var(--mobile-repos-heading-line-height);
                 margin-bottom: var(--mobile-repos-heading-margin-bottom);
@@ -241,10 +243,9 @@
             .no-repos-icon {
                 margin-bottom: var(--no-repos-icon-margin-bottom);
 
-                @media (max-width: 800px) {
+                @media (max-width: 1000px) {
                     width: var(--mobile-no-repos-icon-width);
                     height: var(--mobile-no-repos-icon-height);
-                    margin-bottom: var(--mobile-no-repos-icon-margin-bottom);
                 }
             }
     
@@ -254,12 +255,11 @@
                 line-height: var(--no-repos-text-line-height);
                 color: #808080;
 
-                @media (max-width: 800px) {
+                @media (max-width: 1000px) {
                     font-size: var(--mobile-no-repos-text-font-size);
                     line-height: var(--mobile-no-repos-text-line-height);
                 }
             }
         }
     }
-    
 }
