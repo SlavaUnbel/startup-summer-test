@@ -1,23 +1,19 @@
 import React from 'react';
-import { Repos } from '../../types/repos';
-import { User } from '../../types/user';
 import millify from 'millify';
 import Repositories from './Repositories';
+import { useAppSelector } from '../../redux/store';
+import { userDataSelector } from '../../redux/selectors/mainSelector';
 
-interface Props {
-  notFound: boolean;
-  user: User;
-  repos: Repos[];
-}
+const GithubProfile: React.FC = () => {
+  const { user, repos, isFetchError } = useAppSelector(userDataSelector);
+  const { avatar_url: avatarImg, name, login, html_url: userLink, following, followers } = user;
 
-const GithubProfile: React.FC<Props> = ({ notFound, user, repos }) => {
   const userIcon = `${process.env.PUBLIC_URL}/assets/user.svg`;
   const manyPeopleIcon = `${process.env.PUBLIC_URL}/assets/many-people.svg`;
   const oneManIcon = `${process.env.PUBLIC_URL}/assets/one-man.svg`;
   const noReposIcon = `${process.env.PUBLIC_URL}/assets/no-repos.svg`;
-  const { avatar_url: avatarImg, name, login, html_url: userLink, following, followers } = user;
 
-  if (notFound) {
+  if (isFetchError) {
     return (
       <React.Fragment>
         <img className="user-icon" src={userIcon} alt="" />
@@ -58,7 +54,7 @@ const GithubProfile: React.FC<Props> = ({ notFound, user, repos }) => {
           <React.Fragment>
             <h1 className="repos-heading">Repositories ({repos.length})</h1>
 
-            <Repositories repos={repos} />
+            <Repositories />
           </React.Fragment>
         ) : (
           <div className="no-repos">

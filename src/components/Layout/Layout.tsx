@@ -1,35 +1,23 @@
 import React from 'react';
-import { Repos } from '../../types/repos';
-import { User } from '../../types/user';
 import GithubProfile from '../GithubProfile';
 import Loader from '../Loader';
 import StartScreen from '../StartScreen';
+import { useAppSelector } from '../../redux/store';
+import { mainSelector, userDataSelector } from '../../redux/selectors/mainSelector';
 
-interface Props {
-  searchExecuted: boolean;
-  loading: boolean;
-  notFound: boolean;
-  user: User;
-  repos: Repos[];
-}
+const Layout: React.FC = () => {
+  const { searchExecuted } = useAppSelector(mainSelector);
+  const { isFetching } = useAppSelector(userDataSelector);
 
-const Layout: React.FC<Props> = ({ searchExecuted, loading, notFound, user, repos }) => {
-  if (loading) {
+  if (isFetching) {
     return (
       <div className="layout">
         <Loader />
       </div>
     );
   }
-  return (
-    <div className="layout">
-      {searchExecuted ? (
-        <GithubProfile notFound={notFound} user={user} repos={repos} />
-      ) : (
-        <StartScreen />
-      )}
-    </div>
-  );
+
+  return <div className="layout">{searchExecuted ? <GithubProfile /> : <StartScreen />}</div>;
 };
 
 export default Layout;

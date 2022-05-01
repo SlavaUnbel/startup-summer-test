@@ -1,36 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { Repos } from '../types/repos';
-import { User } from '../types/user';
+import React, { useEffect } from 'react';
 import './App.scss';
 import Header from './Header';
 import Layout from './Layout';
+import { useAppDispatch } from '../redux/store';
+import { setSearchExecuted } from '../redux/reducers/mainReducer';
 
 const App: React.FC = () => {
-  const [searchExecuted, setSearchExecuted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [notFound, setNotFound] = useState(false);
-  const [user, setUser] = useState<User>({} as User);
-  const [repos, setRepos] = useState<Repos[]>([]);
+  const dispatch = useAppDispatch();
 
-  useEffect(() => () => setSearchExecuted(false), []);
+  useEffect(
+    () => () => {
+      dispatch(setSearchExecuted(false));
+    },
+    [dispatch]
+  );
 
   return (
     <div className="app">
-      <Header
-        executeSearch={setSearchExecuted}
-        setLoading={setIsLoading}
-        setNotFound={setNotFound}
-        setUser={setUser}
-        setRepos={setRepos}
-      />
+      <Header />
 
-      <Layout
-        searchExecuted={searchExecuted}
-        loading={isLoading}
-        notFound={notFound}
-        user={user}
-        repos={repos}
-      />
+      <Layout />
     </div>
   );
 };

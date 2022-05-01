@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Repos } from '../../../types/repos';
 import ReactPaginate from 'react-paginate';
+import { useAppSelector } from '../../../redux/store';
+import { userDataSelector } from '../../../redux/selectors/mainSelector';
 
-interface Props {
-  repos: Repos[];
-}
-
-const Repositories: React.FC<Props> = ({ repos }) => {
+const Repositories: React.FC = () => {
+  const { repos } = useAppSelector(userDataSelector);
   const [pageCount, setPageCount] = useState(0);
   const [currentRepos, setCurrentRepos] = useState<Repos[]>([]);
   const [itemOffset, setItemOffset] = useState(0);
